@@ -570,7 +570,7 @@ pub struct SnarkWitness<F: PrimeField, C: CurveAffine> {
 }
 
 impl<F: PrimeField, C: CurveAffine> SnarkWitness<F, C> {
-    fn without_witnesses(&self) -> Self {
+    pub fn without_witnesses(&self) -> Self {
         SnarkWitness {
             protocol: self.protocol.clone(),
             instances: self
@@ -583,7 +583,7 @@ impl<F: PrimeField, C: CurveAffine> SnarkWitness<F, C> {
         }
     }
 
-    fn proof(&self) -> Value<&[u8]> {
+    pub fn proof(&self) -> Value<&[u8]> {
         self.proof.as_ref().map(Vec::as_slice)
     }
 }
