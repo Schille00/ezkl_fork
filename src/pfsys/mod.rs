@@ -506,9 +506,9 @@ where
 /// A proof split commit
 pub struct ProofSplitCommit {
     /// The start index of the output in the witness
-    start: usize,
+    pub start: usize,
     /// The end index of the output in the witness
-    end: usize,
+    pub end: usize,
 }
 
 impl From<GraphWitness> for Option<ProofSplitCommit> {
