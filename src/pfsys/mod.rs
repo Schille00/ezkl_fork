@@ -563,10 +563,10 @@ impl From<GraphWitness> for Option<ProofSplitCommit> {
 /// An application snark with proof and instance variables ready for aggregation (wrapped field element)
 #[derive(Clone, Debug)]
 pub struct SnarkWitness<F: PrimeField, C: CurveAffine> {
-    protocol: Option<PlonkProtocol<C>>,
-    instances: Vec<Vec<Value<F>>>,
-    proof: Value<Vec<u8>>,
-    split: Option<ProofSplitCommit>,
+    pub protocol: Option<PlonkProtocol<C>>,
+    pub instances: Vec<Vec<Value<F>>>,
+    pub proof: Value<Vec<u8>>,
+    pub split: Option<ProofSplitCommit>,
 }
 
 impl<F: PrimeField, C: CurveAffine> SnarkWitness<F, C> {
